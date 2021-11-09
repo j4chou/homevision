@@ -1,0 +1,13 @@
+.header {
+	align-items: center;
+	background-color: var(--black);
+	color: var(--white);
+	font-size: calc(10px + 2vmin);
+	font-weight: bold;
+	line-height: 6rem;
+	height: 6rem;
+	padding-left: 2rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
