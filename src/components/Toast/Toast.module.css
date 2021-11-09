@@ -1,5 +1,6 @@
-.success, .error {
-    border-radius: 4px;
+.success,
+.error {
+	border-radius: 4px;
 	bottom: 1rem;
 	position: fixed;
 	left: 50%;

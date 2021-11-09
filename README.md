@@ -1,10 +1,13 @@
 # HomeVision Project
 
 ### Install dependencies
-- `npm install`
+
+-   `npm install`
 
 ### Begin Development
-- `npm start`
+
+-   `npm start`
 
 ### Create PRD build
-- `npm run build`
+
+-   `npm run build`

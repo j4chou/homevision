@@ -1,20 +1,20 @@
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .spinner {
-    animation: spin 0.8s linear infinite;
-    border: 6px solid var(--navy-blue);
-    bottom: 1rem;
-    right: 2rem;
-    border-radius: 50%;
-    border-top: 6px solid var(--blue);
-    height: 46px;
-    width: 46px;
-    position: fixed;
+	animation: spin 0.8s linear infinite;
+	border: 6px solid var(--navy-blue);
+	bottom: 1rem;
+	right: 2rem;
+	border-radius: 50%;
+	border-top: 6px solid var(--blue);
+	height: 46px;
+	width: 46px;
+	position: fixed;
 }

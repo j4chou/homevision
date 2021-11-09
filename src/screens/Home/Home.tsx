@@ -13,20 +13,20 @@ import { _0, _1, _3 } from '../../constants/index';
 
 axiosRetry(axios, { retries: _3 });
 
-function App () {
+function App() {
 	const [page, setPage] = useState(_1);
 	const { loading, error, houses } = usePagedFetch(page);
-	const lastHouseRef = useCallback(node => {
+	const lastHouseRef = useCallback((node) => {
 		const options = {
 			root: null,
 			rootMargin: '0px',
-			threshold: 0.9
+			threshold: 0.9,
 		};
 		if (node !== null) {
 			const observer = new IntersectionObserver((entries) => {
 				const entry = entries[_0];
 				if (entry.isIntersecting) {
-					setPage(prevPage => prevPage + _1);
+					setPage((prevPage) => prevPage + _1);
 					observer.unobserve(node);
 				}
 			}, options);
@@ -37,10 +37,7 @@ function App () {
 		<div className={styles.homePage}>
 			<header className={styles.header}>HomeVision</header>
 			<main>
-				<HouseList
-					houses={houses}
-					lastHouseRef={lastHouseRef}
-				/>
+				<HouseList houses={houses} lastHouseRef={lastHouseRef} />
 			</main>
 			{loading && <LoadingSpinner />}
 			{error && <Toast success={false} />}

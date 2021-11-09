@@ -3,11 +3,11 @@ import axios from 'axios';
 import { _1, _10 } from '../constants/index';
 
 interface House {
-	id: number,
-	address: string,
-	homeowner: string,
-	price: number,
-	photoURL: string
+	id: number;
+	address: string;
+	homeowner: string;
+	price: number;
+	photoURL: string;
 }
 
 const usePagedFetch = (page = _1, pageSize = _10) => {
@@ -16,28 +16,29 @@ const usePagedFetch = (page = _1, pageSize = _10) => {
 	const [error, toggleError] = useState(false);
 
 	useEffect(() => {
-		async function getHouses () {
+		async function getHouses() {
 			if (error) {
 				toggleError(false);
 			}
 			toggleLoading(true);
 			try {
-				const { data } = await axios.get(`${process.env.REACT_APP_HOMEVISION_API_URL}/api_project/houses`, {
-					params: {
-						page,
-						pageSize
+				const { data } = await axios.get(
+					`${process.env.REACT_APP_HOMEVISION_API_URL}/api_project/houses`,
+					{
+						params: {
+							page,
+							pageSize,
+						},
 					}
-				});
+				);
 				toggleLoading(false);
 				if (data.ok) {
 					const newList = [...new Set([...houses, ...data.houses])];
 					setHouses(newList);
-				}
-				else {
+				} else {
 					toggleError(true);
 				}
-			}
-			catch (error) {
+			} catch (error) {
 				toggleLoading(false);
 				toggleError(true);
 			}
@@ -48,7 +49,7 @@ const usePagedFetch = (page = _1, pageSize = _10) => {
 	return {
 		houses,
 		error,
-		loading
+		loading,
 	};
 };
 
